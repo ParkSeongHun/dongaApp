@@ -1,3 +1,1 @@
-# wordPHP
-# BooDongsan
 # dongaApp
