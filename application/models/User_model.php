@@ -7,8 +7,11 @@ class User_model extends CI_Model{
     public function gets(){
       return $this->db->query("SELECT * FROM users")->result();
     }
-    public function login($option){
-      return $this->db->get_where('users', array('user_id'=>$option['user_id']));
+    public function login($user_id){
+      return $this->db->select('user_pw')->get_where('users', array('user_id'=>$user_id))->row();;
+      // $this->db->where('username', $data['username']);
+      //   $this->db->where('password', hashedPW($data['password']));
+      //   return $this->db->get('users')->row();
     }
     public function add($data){
       return $this->db->insert('users',$data);
